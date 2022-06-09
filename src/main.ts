@@ -7,9 +7,12 @@ import router from '@/router';
 import * as QuasarForTreeShaking from 'quasar';
 
 import locale from 'quasar/lang/ru';
-import '@quasar/extras/roboto-font/roboto-font.css';
-import '@quasar/extras/material-icons/material-icons.css';
-import 'quasar/src/css/index.sass';
+
+if(import.meta.env.DEV) {
+    import('@quasar/extras/roboto-font/roboto-font.css');
+    import('@quasar/extras/material-icons/material-icons.css');
+    import('quasar/src/css/index.sass');
+}
 
 function commonAppUses(app: any) {
     return app

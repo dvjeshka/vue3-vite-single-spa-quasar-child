@@ -1,8 +1,10 @@
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
+import { defineConfig, loadEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 
-const envPrefix = 'VUE_APP_'
+import { resolve } from 'path';
+
+const envPrefix = 'VUE_APP_';
 
 export default defineConfig(({ mode}) => {
 const env = loadEnv(mode, '', envPrefix);
@@ -13,30 +15,35 @@ return {
     vue({ template: { transformAssetUrls }}),
     quasar({
       autoImportComponentCase: 'pascal',
-    })
+    }),
   ],
   base: env.VUE_APP_BASE_URL, // Указываем фактический адрес этого микрофронта, чтобы рут приложение имело правильные ссылки на чанки этого микрофронта
   build: {
+    minify: false,
+    //sourcemap: true,
     target: 'esnext',
     rollupOptions: {
       preserveEntrySignatures: true, // Оставляет exports для single spa
-      input: { app: "./src/main.ts" },
+      input: {
+        index:'./index.html',
+        app: "./src/main.ts"
+      },
       output: { entryFileNames: "js/[name].js" },
       external: [
         'vue',
         //'vue-router',
-        //'singleSpaVue',
-        //'quasar',
-        //'quasar/lang/ru',
-        //'@quasar/extras/roboto-font/roboto-font.css',
-        //'@quasar/extras/material-icons/material-icons.css',
-        //'quasar/src/css/index.sass',
+        'singleSpaVue',
+        'quasar',
+        'quasar/lang/ru',
+        '@quasar/extras/roboto-font/roboto-font.css',
+        '@quasar/extras/material-icons/material-icons.css',
+        'quasar/src/css/index.sass',
       ],
     },
   },
   resolve: {
     alias: {
-      "@": '/src',
+      "@": resolve(__dirname, "src"),
     },
   },
   server: {
