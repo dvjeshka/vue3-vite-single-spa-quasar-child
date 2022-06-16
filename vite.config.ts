@@ -8,7 +8,7 @@ const envPrefix = 'VUE_APP_';
 
 export default defineConfig(({ mode}) => {
 const env = loadEnv(mode, '', envPrefix);
-
+const isProd = mode === 'production'
 return {
   envPrefix,
   plugins: [
@@ -17,7 +17,8 @@ return {
       autoImportComponentCase: 'pascal',
     }),
   ],
-  base: env.VUE_APP_BASE_URL, // Указываем фактический адрес этого микрофронта, чтобы рут приложение имело правильные ссылки на чанки этого микрофронта
+  // Указываем фактический адрес этого микрофронта в проде, чтобы рут приложение имело правильные ссылки на чанки этого микрофронта
+  base: isProd ? env.VUE_APP_BASE_URL : '/' ,
   build: {
     minify: false,
     //sourcemap: true,
