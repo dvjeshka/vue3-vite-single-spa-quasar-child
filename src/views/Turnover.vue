@@ -23,7 +23,8 @@
   )
 
   const env = import.meta.env
-  const VUE_APP_BACKOFFICE_API_PREFIX = import.meta.env.VUE_APP_BACKOFFICE_API_PREFIX
+  const VUE_APP_BACKOFFICE_API_PREFIX = import.meta.env
+    .VUE_APP_BACKOFFICE_API_PREFIX
 
   function test(v: string): string {
     return v
