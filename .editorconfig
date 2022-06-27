@@ -1,0 +1,17 @@
+root = true
+
+[*]
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+ij_html_quote_style = double
+ij_css_use_double_quotes = true
+ij_sass_use_double_quotes = true
+ij_javascript_use_double_quotes = false
+ij_typescript_use_double_quotes = false
+
+[*.md]
+insert_final_newline = false
+trim_trailing_whitespace = false

@@ -1,21 +1,21 @@
 /// <reference types="vitest" />
 
-import { resolve } from 'path'
-import { defineConfig, loadEnv } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
-import compress from 'vite-plugin-compress'
-import { ViteTips } from 'vite-plugin-tips'
-import Inspector from 'vite-plugin-vue-inspector'
-import checker from 'vite-plugin-checker'
+import { resolve } from 'path';
+import { defineConfig, loadEnv } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
+import compress from 'vite-plugin-compress';
+import { ViteTips } from 'vite-plugin-tips';
+import Inspector from 'vite-plugin-vue-inspector';
+import checker from 'vite-plugin-checker';
 //import eslintPlugin from "@nabla/vite-plugin-eslint";
-import eslint from 'vite-plugin-eslint'
+//import eslint from 'vite-plugin-eslint'
 
-const envPrefix = 'VUE_APP_'
+const envPrefix = 'VUE_APP_';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '', envPrefix)
-  const isProd = mode === 'production'
+  const env = loadEnv(mode, '', envPrefix);
+  const isProd = mode === 'production';
   return {
     test: {
       globals: true,
@@ -86,5 +86,5 @@ export default defineConfig(({ mode }) => {
     preview: {
       port: 8080,
     },
-  }
-})
+  };
+});

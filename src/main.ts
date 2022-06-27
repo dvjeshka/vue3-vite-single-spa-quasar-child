@@ -1,15 +1,15 @@
-import { createApp, h } from 'vue'
-import singleSpaVue from 'single-spa-vue'
+import { createApp, h } from 'vue';
+import singleSpaVue from 'single-spa-vue';
 
-import * as QuasarForTreeShaking from 'quasar'
-import locale from 'quasar/lang/ru'
-import App from '@/App.vue'
-import router from '@/router'
+import * as QuasarForTreeShaking from 'quasar';
+import locale from 'quasar/lang/ru';
+import App from '@/App.vue';
+import router from '@/router';
 
 if (import.meta.env.DEV) {
-  import('@quasar/extras/roboto-font/roboto-font.css')
-  import('@quasar/extras/material-icons/material-icons.css')
-  import('quasar/src/css/index.sass')
+  import('@quasar/extras/roboto-font/roboto-font.css');
+  import('@quasar/extras/material-icons/material-icons.css');
+  import('quasar/src/css/index.sass');
 }
 
 function commonAppUses(app: any) {
@@ -27,21 +27,21 @@ function commonAppUses(app: any) {
         warning: '#F2C037',
       },
     },
-  })
+  });
 }
 
-commonAppUses(createApp(App)).mount('#app')
+commonAppUses(createApp(App)).mount('#app');
 
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
     render() {
-      return h(App)
+      return h(App);
     },
   },
   handleInstance: (app) => {
-    commonAppUses(app)
+    commonAppUses(app);
   },
-})
+});
 
-export const { bootstrap, mount, unmount } = vueLifecycles
+export const { bootstrap, mount, unmount } = vueLifecycles;

@@ -1,21 +1,30 @@
 module.exports = {
-  root: true,
-  env: {
-    browser: true,
-    es2022: true,
-    node: true,
-  },
+  plugins: ['@typescript-eslint'],
   extends: [
+    'airbnb-base',
+    'airbnb-typescript/base',
+    'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/typescript/recommended',
     'prettier',
   ],
-  parserOptions: {
-    ecmaVersion: 2022,
-  },
-  plugins: [],
   rules: {
-    'vue/multi-word-component-names': 'off',
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
+      {
+        registeredComponentsOnly: false,
+      },
+    ],
+    'vue/padding-line-between-blocks': 'error'
   },
-}
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    extraFileExtensions: ['.vue'],
+    project: './tsconfig.json',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+};

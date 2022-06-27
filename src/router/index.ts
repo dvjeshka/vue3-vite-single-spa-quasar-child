@@ -1,22 +1,22 @@
-import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHistory } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('@/views/Home.vue'),
+    component: () => import('@/pages/PageHome.vue'),
   },
   {
     path: '/turnover',
     name: 'turnover',
-    component: () => import('@/views/Turnover.vue'),
+    component: () => import('@/pages/PageTurnover.vue'),
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory('/'),
   routes,
-})
+});
 
-export default router
+export default router;
