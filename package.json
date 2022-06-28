@@ -2,16 +2,16 @@
   "name": "@finuslugi/cuf-backoffice",
   "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "eslint src/**/*.{ts,vue} --fix",
-    "prettier": "prettier -w -u . --ignore-path .gitignore",
-    "husky": {
-      "hooks": {
-        "pre-commit": "lint-staged && yarn test"
-      }
+                "scripts": {
+                  "dev": "vite",
+                  "build": "vue-tsc --noEmit && vite build",
+                  "preview": "vite preview",
+                  "lint": "eslint src/**/*.{ts,vue} --fix",
+                  "prettier": "prettier -w -u . --ignore-path .gitignore",
+                  "husky": {
+                    "hooks": {
+                      "pre-commit": "lint-staged && yarn test"
+                    }
     },
     "lint-staged": {
       "src/**/*.{ts,vue}": "eslint --fix",
@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "@quasar/vite-plugin": "^1.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.29.0",
-    "@typescript-eslint/parser": "^5.29.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-vue": "^2.3.3",
     "c8": "^7.11.3",
     "eslint": "^8.18.0",
@@ -40,7 +40,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.1.1",
-    "happy-dom": "^5.3.2",
+    "happy-dom": "^5.3.4",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "sass": "1.32.12",
@@ -51,9 +51,9 @@
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-tips": "^2.1.0",
     "vite-plugin-vue-inspector": "^1.0.1",
-    "vitest": "^0.15.2",
+    "vitest": "^0.16.0",
     "vitest-sonar-reporter": "^0.2.1",
     "vue-eslint-parser": "^9.0.3",
-    "vue-tsc": "^0.34.17"
+    "vue-tsc": "^0.38.2"
   }
 }
