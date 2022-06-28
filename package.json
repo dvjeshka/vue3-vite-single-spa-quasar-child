@@ -2,23 +2,19 @@
   "name": "@finuslugi/cuf-backoffice",
   "version": "0.0.0",
   "private": true,
-            "scripts": {
-              "dev": "vite",
-              "build": "vue-tsc --noEmit && vite build",
-              "preview": "vite preview",
-              "lint": "eslint src/**/*.{ts,vue} --fix",
-              "prettier": "prettier -w -u . --ignore-path .gitignore",
-              "husky": {
-                "hooks": {
-                  "pre-commit": "lint-staged && yarn test"
-                }
-    },
-    "lint-staged": {
-      "src/**/*.{ts,vue}": "eslint --fix",
-      "*": "prettier -w -u --ignore-path .gitignore"
-    },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.{ts,vue} --fix",
+    "prettier": "prettier -w -u . --ignore-path .gitignore",
     "test": "vitest run --coverage",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,vue}": "eslint --fix",
+    "*": "prettier -w -u --ignore-path .gitignore"
   },
   "dependencies": {
     "@quasar/extras": "^1.14.1",
@@ -41,7 +37,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.1.1",
     "happy-dom": "^5.3.4",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
     "sass": "1.32.12",
     "typescript": "^4.7.4",
