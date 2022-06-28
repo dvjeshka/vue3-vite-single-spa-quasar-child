@@ -1,4 +1,4 @@
-// Edit an assertion and save to see HMR in action
+import { test, expect, assert } from 'vitest';
 
 test('Math.sqrt()', () => {
   expect(Math.sqrt(4)).toBe(2);

@@ -8,8 +8,6 @@ import compress from 'vite-plugin-compress';
 import { ViteTips } from 'vite-plugin-tips';
 import Inspector from 'vite-plugin-vue-inspector';
 import checker from 'vite-plugin-checker';
-//import eslintPlugin from "@nabla/vite-plugin-eslint";
-//import eslint from 'vite-plugin-eslint'
 
 const envPrefix = 'VUE_APP_';
 
@@ -18,7 +16,6 @@ export default defineConfig(({ mode }) => {
   const isProd = mode === 'production';
   return {
     test: {
-      globals: true,
       environment: 'happy-dom',
       coverage: {
         reportsDirectory: './test/until/.coverage',
@@ -36,22 +33,14 @@ export default defineConfig(({ mode }) => {
     plugins: [
       ViteTips(),
       Inspector(),
-      checker({
-        vueTsc: true,
-        /*    eslint: {
-          lintCommand: 'eslint .',
-        },*/
-      }),
+      checker({ vueTsc: true }),
       vue({ template: { transformAssetUrls } }),
       quasar({ autoImportComponentCase: 'pascal' }),
       compress({ verbose: true, brotli: false }),
-      //eslintPlugin()
-      //eslint({ fix: true }),
     ],
     // Указываем фактический адрес этого микрофронта в проде, чтобы рут приложение имело правильные ссылки на чанки этого микрофронта
     base: isProd ? env.VUE_APP_BASE_URL : '/',
     build: {
-      // reportCompressedSize: false,
       minify: true,
       // sourcemap: true,
       target: 'esnext',

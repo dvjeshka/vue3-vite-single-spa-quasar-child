@@ -4,7 +4,6 @@
     <p>{{ env }}</p>
     <p>VUE_APP_BACKOFFICE_API_PREFIX {{ VUE_APP_BACKOFFICE_API_PREFIX }}</p>
     <QBtn color="primary"> Quasar btn primary </QBtn>
-
     <QBtn color="secondary"> Quasar btn secondary </QBtn>
     <QBtn color="accent "> Quasar btn accent </QBtn>
     <QBtn color="dark"> Quasar btn dark </QBtn>

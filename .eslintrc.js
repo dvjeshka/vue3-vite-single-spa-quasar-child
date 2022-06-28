@@ -17,7 +17,7 @@ module.exports = {
         registeredComponentsOnly: false,
       },
     ],
-    'vue/padding-line-between-blocks': 'error'
+    'vue/padding-line-between-blocks': 'error',
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
