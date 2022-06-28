@@ -2,16 +2,16 @@
   "name": "@finuslugi/cuf-backoffice",
   "version": "0.0.0",
   "private": true,
-              "scripts": {
-                "dev": "vite",
-                "build": "vue-tsc --noEmit && vite build",
-                "preview": "vite preview",
-                "lint": "eslint src/**/*.{ts,vue} --fix",
-                "prettier": "prettier -w -u . --ignore-path .gitignore",
-                "husky": {
-                  "hooks": {
-                    "pre-commit": "lint-staged && yarn test"
-                  }
+            "scripts": {
+              "dev": "vite",
+              "build": "vue-tsc --noEmit && vite build",
+              "preview": "vite preview",
+              "lint": "eslint src/**/*.{ts,vue} --fix",
+              "prettier": "prettier -w -u . --ignore-path .gitignore",
+              "husky": {
+                "hooks": {
+                  "pre-commit": "lint-staged && yarn test"
+                }
     },
     "lint-staged": {
       "src/**/*.{ts,vue}": "eslint --fix",
