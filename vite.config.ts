@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '', envPrefix);
   const isProd = mode === 'production';
   return {
+    envPrefix,
     test: {
       environment: 'happy-dom',
       coverage: {
@@ -29,7 +30,6 @@ export default defineConfig(({ mode }) => {
       reporters: 'vitest-sonar-reporter',
       outputFile: 'test-report.xml',
     },
-    envPrefix,
     plugins: [
       ViteTips(),
       Inspector(),
