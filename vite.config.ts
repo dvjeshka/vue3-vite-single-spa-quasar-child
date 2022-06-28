@@ -17,16 +17,16 @@ export default defineConfig(({ mode }) => {
   return {
     envPrefix,
     test: {
-            environment: 'happy-dom',
-            coverage: {
-              reportsDirectory: './test/until/.coverage',
-              all: true,
-              src: './src',
-              lines: 80,
-              functions: 80,
-              branches: 80,
-              statements: 80,
-            },
+                    environment: 'happy-dom',
+                    coverage: {
+                      reportsDirectory: './test/until/.coverage',
+                      all: true,
+                      src: './src',
+                      lines: 80,
+                      functions: 80,
+                      branches: 80,
+                      statements: 80,
+                    },
       reporters: 'vitest-sonar-reporter',
       outputFile: 'test-report.xml',
     },
