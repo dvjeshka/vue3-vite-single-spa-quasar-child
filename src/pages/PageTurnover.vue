@@ -1,8 +1,8 @@
 <template>
   <WrapPage>
+    <ComponentWithRuntimeEnv />
+    <ComponentWithFetch />
     <h1 :class="$style.title">Turnover</h1>
-    <p>{{ env }}</p>
-    <p>VUE_APP_BACKOFFICE_API_PREFIX {{ VUE_APP_BACKOFFICE_API_PREFIX }}</p>
     <QBtn color="primary"> Quasar btn primary </QBtn>
     <QBtn color="secondary"> Quasar btn secondary </QBtn>
     <QBtn color="accent "> Quasar btn accent </QBtn>
@@ -19,24 +19,35 @@
     >
       Quasar btn warning
     </QBtn>
-    <img src="@/assets/wallpaperbetter.jpg" />
+    <img
+      alt="wallpaperbetter"
+      width="100"
+      height="100"
+      src="@/assets/wallpaperbetter.jpg"
+    />
+    <img
+      alt="wallpaperbetter"
+      width="100"
+      height="100"
+      src="../assets/wallpaperbetter.jpg"
+    />
   </WrapPage>
 </template>
 
 <script lang="ts" setup>
   import { defineAsyncComponent } from 'vue';
 
-  const input = {
-    foo: 'hello',
-    bar: 'world',
-  };
+  const ComponentWithFetch = defineAsyncComponent(
+    () => import('@/components/ComponentWithFetch.vue')
+  );
+
+  const ComponentWithRuntimeEnv = defineAsyncComponent(
+    () => import('@/components/ComponentWithRuntimeEnv.vue')
+  );
 
   const WrapPage = defineAsyncComponent(
     () => import('@/components/WrapPage.vue')
   );
-
-  const { env } = import.meta;
-  const { VUE_APP_BACKOFFICE_API_PREFIX } = import.meta.env;
 
   function test(v: string): string {
     return v;

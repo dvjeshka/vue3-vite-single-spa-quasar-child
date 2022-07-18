@@ -8,14 +8,11 @@ import compress from 'vite-plugin-compress';
 import { ViteTips } from 'vite-plugin-tips';
 import Inspector from 'vite-plugin-vue-inspector';
 import checker from 'vite-plugin-checker';
+import ImportMetaEnvPlugin from '@import-meta-env/unplugin';
 
-const envPrefix = 'VUE_APP_';
-
-export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '', envPrefix);
-  const isProd = mode === 'production';
+export default defineConfig(() => {
   return {
-    envPrefix,
+    envPrefix: [], // https://iendeavor.github.io/import-meta-env/guide.html#framework-specific-notes
     test: {
       environment: 'happy-dom',
       coverage: {
@@ -31,18 +28,19 @@ export default defineConfig(({ mode }) => {
       outputFile: 'test-report.xml',
     },
     plugins: [
+      ImportMetaEnvPlugin.vite({
+        example: '.env.runtime',
+      }),
       ViteTips(),
       Inspector(),
       checker({ vueTsc: true }),
+
       vue({ template: { transformAssetUrls } }),
       quasar({ autoImportComponentCase: 'pascal' }),
       compress({ verbose: true, brotli: false }),
     ],
-    // Указываем фактический адрес этого микрофронта в проде, чтобы рут приложение имело правильные ссылки на чанки этого микрофронта
-    base: isProd ? env.VUE_APP_BASE_URL : '/',
+    base: './',
     build: {
-      minify: true,
-      // sourcemap: true,
       target: 'esnext',
       rollupOptions: {
         preserveEntrySignatures: true, // Оставляет exports для single spa
@@ -51,7 +49,7 @@ export default defineConfig(({ mode }) => {
           app: './src/main.ts',
         },
         output: { entryFileNames: 'js/[name].js' },
-        external: [
+        /*  external: [
           'vue',
           // 'vue-router',
           'singleSpaVue',
@@ -60,7 +58,9 @@ export default defineConfig(({ mode }) => {
           '@quasar/extras/roboto-font/roboto-font.css',
           '@quasar/extras/material-icons/material-icons.css',
           'quasar/src/css/index.sass',
-        ],
+          'axios',
+          '@vueuse/integrations/useAxios',
+        ],*/
       },
     },
     resolve: {
@@ -69,7 +69,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
-      port: 3000,
+      port: 8080,
       open: true,
     },
     preview: {

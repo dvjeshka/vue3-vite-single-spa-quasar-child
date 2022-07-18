@@ -18,6 +18,15 @@ module.exports = {
       },
     ],
     'vue/padding-line-between-blocks': 'error',
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'always',
+        },
+      },
+    ],
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
