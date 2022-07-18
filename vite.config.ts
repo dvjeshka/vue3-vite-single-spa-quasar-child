@@ -29,7 +29,8 @@ export default defineConfig(() => {
     },
     plugins: [
       ImportMetaEnvPlugin.vite({
-        example: '.env.runtime',
+        env: '.env.default',
+        example: '.env.default.runtime',
       }),
       ViteTips(),
       Inspector(),
