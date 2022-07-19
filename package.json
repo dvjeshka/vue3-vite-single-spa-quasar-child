@@ -5,16 +5,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "preview-import-meta-env": "import-meta-env --example .env.runtime && vite preview",
-    "preview-runtime-env": "cross-env VUE_APP_BACKOFFICE_API_PREFIX=https://jsonplaceholder.typicode.com TITLE=runtimeTitle import-meta-env --example .env.runtime && vite preview",
+    "preview": "cross-env VUE_APP_BACKOFFICE_API_PREFIX=https://jsonplaceholder.typicode.com TITLE=runtimeTitle import-meta-env --example .env.runtime && vite preview",
     "lint": "eslint src/**/*.{ts,vue} --fix",
     "prettier": "prettier -w -u . --ignore-path .gitignore",
     "test": "vitest run --coverage",
     "test:watch": "vitest --watch",
     "prepare": "husky install",
-    "pre-commit": "lint-staged && yarn test",
-    "import-meta-env": "import-meta-env"
+    "pre-commit": "lint-staged && yarn test"
   },
   "lint-staged": {
     "src/**/*.{ts,vue}": "eslint --fix",
