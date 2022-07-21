@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 
 import { resolve } from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin';
 import compress from 'vite-plugin-compress';
@@ -35,13 +35,13 @@ export default defineConfig(() => {
       ViteTips(),
       Inspector(),
       checker({ vueTsc: true }),
-
       vue({ template: { transformAssetUrls } }),
       quasar({ autoImportComponentCase: 'pascal' }),
       compress({ verbose: true, brotli: false }),
     ],
     base: './',
     build: {
+      minify: false,
       target: 'esnext',
       rollupOptions: {
         preserveEntrySignatures: true, // Оставляет exports для single spa
@@ -50,9 +50,9 @@ export default defineConfig(() => {
           app: './src/main.ts',
         },
         output: { entryFileNames: 'js/[name].js' },
-        /*  external: [
+        external: [
           'vue',
-          // 'vue-router',
+          'vue-router',
           'singleSpaVue',
           'quasar',
           'quasar/lang/ru',
@@ -61,7 +61,7 @@ export default defineConfig(() => {
           'quasar/src/css/index.sass',
           'axios',
           '@vueuse/integrations/useAxios',
-        ],*/
+        ],
       },
     },
     resolve: {
