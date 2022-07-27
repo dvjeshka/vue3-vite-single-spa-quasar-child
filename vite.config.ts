@@ -14,15 +14,16 @@ export default defineConfig(() => {
   return {
     envPrefix: [], // https://iendeavor.github.io/import-meta-env/guide.html#framework-specific-notes
     test: {
+      includeSource: ['./src/**/*.ts'],
       environment: 'happy-dom',
       coverage: {
-        reportsDirectory: './test/until/.coverage',
-        all: false,
+        reportsDirectory: './test/utils/.coverage',
         src: './src',
-        //lines: 80,
-        //functions: 80,
-        //branches: 80,
-        //statements: 80,
+        /*  all: false,
+          lines: 80,
+          functions: 80,
+          branches: 80,
+          statements: 80,*/
       },
       reporters: 'vitest-sonar-reporter',
       outputFile: 'test-report.xml',

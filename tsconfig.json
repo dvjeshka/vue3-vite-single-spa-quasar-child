@@ -12,11 +12,11 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client", "vitest/importMeta"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }],

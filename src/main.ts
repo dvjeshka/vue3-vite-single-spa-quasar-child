@@ -13,21 +13,26 @@ if (import.meta.env.DEV) {
 }
 
 function commonAppUses(app: any) {
-  return app.use(router).use(QuasarForTreeShaking.Quasar, {
-    lang: locale,
-    config: {
-      brand: {
-        primary: '#024079',
-        secondary: '#26A69A',
-        accent: '#9C27B0',
-        dark: '#1D1D1D',
-        positive: '#21BA45',
-        negative: '#C10015',
-        info: '#31CCEC',
-        warning: '#F2C037',
-      },
-    },
-  });
+  return app.use(router).use(
+    QuasarForTreeShaking.Quasar,
+    import.meta.env.DEV
+      ? {
+          lang: locale,
+          config: {
+            brand: {
+              primary: '#024079',
+              secondary: '#26A69A',
+              accent: '#9C27B0',
+              dark: '#1D1D1D',
+              positive: '#21BA45',
+              negative: '#C10015',
+              info: '#31CCEC',
+              warning: '#F2C037',
+            },
+          },
+        }
+      : {}
+  );
 }
 
 commonAppUses(createApp(App)).mount('#app');

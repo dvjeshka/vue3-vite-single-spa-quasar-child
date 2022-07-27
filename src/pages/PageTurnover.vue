@@ -3,6 +3,10 @@
     <ComponentWithRuntimeEnv />
     <ComponentWithFetch />
     <h1 :class="$style.title">Turnover</h1>
+    <QDate
+      model-value=""
+      first-day-of-week="1"
+    />
     <QBtn color="primary"> Quasar btn primary </QBtn>
     <QBtn color="secondary"> Quasar btn secondary </QBtn>
     <QBtn color="accent "> Quasar btn accent </QBtn>
@@ -36,6 +40,10 @@
 
 <script lang="ts" setup>
   import { defineAsyncComponent } from 'vue';
+
+  import exampleInSourceTest from '@/utils/exampleInSourceTest';
+
+  exampleInSourceTest(1, 2, 3);
 
   const ComponentWithFetch = defineAsyncComponent(
     () => import('@/components/ComponentWithFetch.vue')

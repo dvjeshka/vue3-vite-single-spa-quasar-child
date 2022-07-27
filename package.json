@@ -21,13 +21,13 @@
     "@quasar/extras": "^1.14.3",
     "@vueuse/integrations": "^8.9.4",
     "axios": "^0.27.2",
-    "prettier": "2.7.1",
     "quasar": "^2.7.5",
     "single-spa-vue": "^2.5.1",
     "vue": "^3.2.37",
     "vue-router": "^4.1.2"
   },
   "devDependencies": {
+    "prettier": "2.7.1",
     "@import-meta-env/cli": "^0.1.7",
     "@import-meta-env/unplugin": "^0.1.8",
     "@quasar/vite-plugin": "^1.0.10",

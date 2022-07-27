@@ -27,6 +27,7 @@ module.exports = {
         },
       },
     ],
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
