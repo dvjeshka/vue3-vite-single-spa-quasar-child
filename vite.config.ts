@@ -42,7 +42,6 @@ export default defineConfig(() => {
     ],
     base: './',
     build: {
-      minify: false,
       target: 'esnext',
       rollupOptions: {
         preserveEntrySignatures: true, // Оставляет exports для single spa
