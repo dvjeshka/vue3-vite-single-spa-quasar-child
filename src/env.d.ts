@@ -10,7 +10,7 @@ declare module '*.vue' {
 
 interface ImportMetaEnv {
   readonly VUE_APP_BACKOFFICE_API_PREFIX: string;
-  readonly VUE_APP_BASE_URL: string;
+  readonly TITLE: string;
 }
 
 interface ImportMeta {

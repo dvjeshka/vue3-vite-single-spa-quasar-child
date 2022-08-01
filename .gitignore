@@ -24,6 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 
-/test/until/.coverage
+/test/**/.coverage
 /test/__snapshots__
 test-report.xml
