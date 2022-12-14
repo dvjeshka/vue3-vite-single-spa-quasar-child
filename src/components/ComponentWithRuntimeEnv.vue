@@ -2,7 +2,7 @@
   <pre>{{ env }}</pre>
   <p>
     VUE_APP_BACKOFFICE_API_PREFIX
-    <strong>{{ VUE_APP_BACKOFFICE_API_PREFIX }}</strong>
+    <strong>{{ VABAP }}</strong>
   </p>
   <p>
     Title <strong>{{ TITLE }}</strong>
@@ -14,8 +14,7 @@
 
 <script setup lang="ts">
   /* eslint-disable */
-  const VUE_APP_BACKOFFICE_API_PREFIX = import.meta.env
-    .VUE_APP_BACKOFFICE_API_PREFIX;
+  const VABAP = import.meta.env.VUE_APP_BACKOFFICE_API_PREFIX;
   const TITLE = import.meta.env.TITLE;
   const BASE_URL = import.meta.env.BASE_URL;
   // eslint-disable-next-line

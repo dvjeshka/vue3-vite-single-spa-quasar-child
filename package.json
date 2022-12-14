@@ -19,11 +19,9 @@
     "*": "prettier -w -u --ignore-path .gitignore"
   },
   "dependencies": {
-    "@quasar/extras": "^1.15.8",
     "@vueuse/integrations": "^9.6.0",
     "axios": "^1.2.1",
-    "quasar": "^2.10.2",
-    "single-spa-vue": "^2.5.1",
+    "sass": "^1.56.2",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
@@ -48,11 +46,9 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "prettier": "2.8.1",
-    "sass": "1.32.12",
     "typescript": "^4.9.4",
     "vite": "^4.0.1",
     "vite-plugin-checker": "^0.5.2",
-    "vite-plugin-compress": "^2.1.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-tips": "^2.1.0",
     "vite-plugin-vue-inspector": "^2.0.1",
