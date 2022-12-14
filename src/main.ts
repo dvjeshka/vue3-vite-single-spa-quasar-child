@@ -6,11 +6,14 @@ import locale from 'quasar/lang/ru';
 import App from '@/App.vue';
 import router from '@/router';
 
-if (import.meta.env.DEV) {
-  import('@quasar/extras/roboto-font/roboto-font.css');
-  import('@quasar/extras/material-icons/material-icons.css');
-  import('quasar/src/css/index.sass');
-}
+// @ts-ignore
+globalThis.import_meta_env = JSON.parse('"import_meta_env_placeholder"');
+
+// if (import.meta.env.DEV) {
+import('@quasar/extras/roboto-font/roboto-font.css');
+import('@quasar/extras/material-icons/material-icons.css');
+import('quasar/src/css/index.sass');
+// }
 
 function commonAppUses(app: any) {
   return app.use(router).use(

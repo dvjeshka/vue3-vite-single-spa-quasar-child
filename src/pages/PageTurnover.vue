@@ -3,7 +3,7 @@
     <ComponentWithRuntimeEnv />
     <ComponentWithFetch />
     <h1 :class="$style.title">Turnover</h1>
-    <QDate
+    <!--    <QDate
       model-value=""
       first-day-of-week="1"
     />
@@ -22,7 +22,7 @@
       type="submit"
     >
       Quasar btn warning
-    </QBtn>
+    </QBtn>-->
     <img
       alt="wallpaperbetter"
       width="100"

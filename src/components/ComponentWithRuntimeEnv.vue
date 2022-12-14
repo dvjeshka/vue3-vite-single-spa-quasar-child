@@ -13,9 +13,12 @@
 </template>
 
 <script setup lang="ts">
-  const { VUE_APP_BACKOFFICE_API_PREFIX } = import.meta.env;
-  const { TITLE } = import.meta.env;
-  const { BASE_URL } = import.meta.env;
+  /* eslint-disable */
+  const VUE_APP_BACKOFFICE_API_PREFIX = import.meta.env
+    .VUE_APP_BACKOFFICE_API_PREFIX;
+  const TITLE = import.meta.env.TITLE;
+  const BASE_URL = import.meta.env.BASE_URL;
   // eslint-disable-next-line
   const env = import.meta.env;
+  /* eslint-enable */
 </script>

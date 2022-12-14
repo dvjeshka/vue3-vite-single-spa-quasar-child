@@ -39,7 +39,7 @@ export default defineConfig(() => ({
     checker({ vueTsc: true }),
     vue({ template: { transformAssetUrls } }),
     quasar({ autoImportComponentCase: 'pascal' }),
-    compress({ verbose: true, brotli: false }),
+    // compress({ verbose: true, brotli: false }),
   ],
   base: './',
   build: {
@@ -53,7 +53,7 @@ export default defineConfig(() => ({
         app: '/main.ts',
       },
       output: { entryFileNames: 'js/[name].js' },
-      external: [
+      /*external: [
         'vue',
         'vue-router',
         'singleSpaVue',
@@ -64,7 +64,7 @@ export default defineConfig(() => ({
         'quasar/src/css/index.sass',
         'axios',
         '@vueuse/integrations/useAxios',
-      ],
+      ],*/
     },
   },
   define: {
