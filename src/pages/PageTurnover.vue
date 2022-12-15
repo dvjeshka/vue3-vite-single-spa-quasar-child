@@ -36,10 +36,8 @@
       src="../assets/wallpaperbetter.jpg"
     />
     <img
-      alt="wallpaperbetter"
-      width="100"
-      height="100"
-      src="./src/assets/wallpaperbetter.jpg"
+      alt="telegram"
+      src="../assets/icons/telegram.svg"
     />
   </WrapPage>
 </template>

@@ -1,9 +1,6 @@
 <template>
   <section>
-    <QSpinner
-      v-if="isLoading"
-      size="500"
-    />
+    {{ isLoading }}
     {{ data }}
     {{ isFinished }}
   </section>
