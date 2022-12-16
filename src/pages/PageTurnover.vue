@@ -1,8 +1,9 @@
 <template>
   <WrapPage>
+    <h1 :class="$style.title">Turnover</h1>
     <ComponentWithRuntimeEnv />
     <ComponentWithFetch />
-    <h1 :class="$style.title">Turnover</h1>
+    <ComponentWithImages />
     <!--    <QDate
       model-value=""
       first-day-of-week="1"
@@ -23,22 +24,6 @@
     >
       Quasar btn warning
     </QBtn>-->
-    <img
-      alt="wallpaperbetter"
-      width="100"
-      height="100"
-      src="@/assets/wallpaperbetter.jpg"
-    />
-    <img
-      alt="wallpaperbetter"
-      width="100"
-      height="100"
-      src="../assets/wallpaperbetter.jpg"
-    />
-    <img
-      alt="telegram"
-      src="../assets/icons/telegram.svg"
-    />
   </WrapPage>
 </template>
 
@@ -55,6 +40,10 @@
 
   const ComponentWithRuntimeEnv = defineAsyncComponent(
     () => import('@/components/ComponentWithRuntimeEnv.vue')
+  );
+
+  const ComponentWithImages = defineAsyncComponent(
+    () => import('@/components/ComponentWithImages.vue')
   );
 
   const WrapPage = defineAsyncComponent(

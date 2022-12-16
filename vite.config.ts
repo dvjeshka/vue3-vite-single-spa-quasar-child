@@ -1,5 +1,6 @@
 /// <reference types="vitest" />
 
+import { fileURLToPath, URL } from 'url';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
@@ -8,8 +9,12 @@ import Inspector from 'vite-plugin-vue-inspector';
 import checker from 'vite-plugin-checker';
 import ImportMetaEnvPlugin from '@import-meta-env/unplugin';
 
+console.log(import.meta.url);
+console.log(new URL('./src', import.meta.url));
+console.log(fileURLToPath(new URL('./src', import.meta.url)));
+
 export default defineConfig(() => ({
-  root: './src',
+  //root: './src',
   envPrefix: [], // https://iendeavor.github.io/import-meta-env/guide.html#framework-specific-notes
   test: {
     dir: './',
@@ -38,16 +43,16 @@ export default defineConfig(() => ({
     vue(),
   ],
   build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-    target: 'esnext',
+    //outDir: '../dist',
+    //emptyOutDir: true,
   },
   define: {
     'import.meta.vitest': false,
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      //'@': `${resolve(__dirname, 'src')}`,
     },
   },
   server: {
