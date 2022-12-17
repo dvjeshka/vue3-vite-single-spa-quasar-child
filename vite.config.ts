@@ -4,14 +4,10 @@ import { fileURLToPath, URL } from 'url';
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { ViteTips } from 'vite-plugin-tips';
+//import { ViteTips } from 'vite-plugin-tips';
 import Inspector from 'vite-plugin-vue-inspector';
 import checker from 'vite-plugin-checker';
 import ImportMetaEnvPlugin from '@import-meta-env/unplugin';
-
-console.log(import.meta.url);
-console.log(new URL('./src', import.meta.url));
-console.log(fileURLToPath(new URL('./src', import.meta.url)));
 
 export default defineConfig(() => ({
   //root: './src',
@@ -37,7 +33,7 @@ export default defineConfig(() => ({
       env: '.env.default',
       example: '.env.runtime',
     }),
-    ViteTips(),
+    //ViteTips(),
     Inspector(),
     checker({ vueTsc: true }),
     vue(),

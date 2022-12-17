@@ -8,6 +8,7 @@
   <img
     alt="Vue logo"
     src="@/assets/logo.png"
+    class="block"
   />
   <HelloWorld msg="finuslugi-backoffice Vue 3 + TypeScript + Vite" />
   <RouterLink to="/turnover"> Turnover </RouterLink>

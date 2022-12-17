@@ -1,6 +1,6 @@
 <template>
-  <WrapPage>
-    <h1 :class="$style.title">Turnover</h1>
+  <WrapPage class="font-bold">
+    <h1>Turnover</h1>
     <ComponentWithRuntimeEnv />
     <ComponentWithFetch />
     <ComponentWithImages />
@@ -55,9 +55,3 @@
   }
   test('{}');
 </script>
-
-<style module>
-  .title {
-    color: red;
-  }
-</style>

@@ -4,6 +4,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    component: () => import('@/pages/PageTailwind.vue'),
+  },
+  {
+    path: '/',
     name: 'home',
     component: () => import('@/pages/PageHome.vue'),
   },
