@@ -18,6 +18,7 @@ export default defineConfig(() => ({
     includeSource: ['./src/**/*.ts'],
     environment: 'happy-dom',
     coverage: {
+      provider: 'v8', // or 'istanbul'
       reportsDirectory: '../test/utils/.coverage',
       src: ['./src'],
       /*    all: true,
